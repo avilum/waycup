@@ -13,11 +13,11 @@ You can use WayCup as an additional layer of security against fingerprinting for
 1. The server(s) listen on any port for a magic packet via TCP/UDP. 
 2. A magic "Wake Up" packet is sent from a client.
 3. The "Wake Up" packet is received by the server.
-3. The server run a generic script, that exposes the service to the client on the same (or new) port.
+3. The server runs a generic script, that exposes the service (SSH, HTTP...) to the client on the same (or on a new) port.
 
 # Examples
 
-## Running wake-up listener on a server 
+## Running a server 
 ```bash
 $ ./server.sh
 Listening for magic packets on localhost:8080
