@@ -55,7 +55,7 @@ echo $MAGIC | nc -c -vvv $MAGIC_LISTENER_HOST $MAGIC_LISTENER_PORT && echo "Succ
 # Do whatever you want here, 
 # See server_main.sh and client.sh for more documentation.
 ```
-Python:
+Magic packet that starts an HTTP Server with Python:
 ```text
 In [1]: import requests
 In [2]: requests.get('http://localhost:80')
