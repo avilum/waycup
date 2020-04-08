@@ -21,12 +21,9 @@ You can copy and paste it in your servers, as-is, if you have <code>nc</code> in
 ```bash
 $ ./server.sh # You can change the configuration inside
 Listening for magic packets on localhost:8080
-Listening on any address 8080 (http-alt)
 Connection from 127.0.0.1:60427
-read(net): Connection reset by peer
 Successful connection
 Running the main startup script: ./server_main.sh
-Starting the main startup script.
 Starting a reverse shell on localhost:8080
 ```
 
