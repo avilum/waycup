@@ -44,7 +44,7 @@ sudo su
 whoami
 root
 ```
-nc/netcat/socat/ncat reverse-shell:
+nc/netcat/socat/ncat magic packets:
 ```bash
 MAGIC="secret"
 SERVER_HOST="localhost"
