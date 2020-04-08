@@ -1,5 +1,4 @@
-# WayCup - A tool agains fingerprinting.<br>
-WayCup scripts let you expose your real server functionality only after sending a magic "Wake Up" packet to an open port.<br>
+These scripts let you expose your real server functionality only after sending a magic "Wake Up" packet to an open port.<br>
 You can use WayCup as an <b>additional<b> layer of security against fingerprinting for you SSH/HTTP servers (and many more).<br>
 
 ## Use Cases:
