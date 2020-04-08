@@ -4,7 +4,7 @@ You can use WayCup as an additional layer of security against fingerprinting for
 
 ## Use Cases:
 1. Hide services behind open ports from security scanners (Shodan, Censys...)
-2. Expose a service fingerprint only to clients with pre-shared secret, without modifying the application layer or managing users.
+2. Expose a service's fingerprint only to clients with pre-shared secret, without modifying the application layer or managing users.
 3. Use as an API for remote calls on a machine (run a generic script)
 4. When SSH is not (or can't be) installed - pure remote bash shell.
 5. Leaving backdoors that start on demand (reverse shells)
