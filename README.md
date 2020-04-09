@@ -1,6 +1,13 @@
 These scripts let you expose your real server functionality only after sending a magic "Wake Up" packet to an open port.<br>
 You can use WayCup as an <b>additional</b> layer of security against fingerprinting for your SSH/HTTP servers (and many more), or a minimal alternative to port knocking.<br>
-Run <code>./server.sh</code> and <code>./client.sh</code> for an example of a reverse shell after a "handshake".
+Run a local example: reverse shell with magic handshake<br>
+```bash
+
+git clone git@github.com:avilum/waycup.git && cd waycup/
+./server.sh & # Or in another terminal
+./client.sh
+
+```
 
 ## Use Cases:
 1. Hide services behind open ports from security scanners (Shodan, Censys...)
