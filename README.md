@@ -14,7 +14,7 @@ git clone git@github.com:avilum/waycup.git && cd waycup/
 ## Use Cases:
 1. Hide services behind open ports from security scanners (Shodan, Censys...)
 2. Expose a service's functionality on a port only to clients with a pre-shared secret, without modifying the application layer or managing users.
-4. Copy/Paste where you don't want to configure a proxy like nginx. It's easy to fingerprint, just saying. This solution is copy/pase with almost no dependencies.
+4. Copy/Paste where you don't want to configure a proxy like nginx. Also, it's easy to fingerprint nginx. This is a copy/paste solution with almost no dependencies.
 
 ### Less secure (but nice) use cases:
 1. Use as an API for remote calls on a machine (run a generic script)
