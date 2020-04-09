@@ -4,7 +4,9 @@ Run a local example: reverse shell with magic handshake<br>
 ```bash
 
 git clone git@github.com:avilum/waycup.git && cd waycup/
+
 ./server.sh & # Or in another terminal
+
 ./client.sh
 
 ```
