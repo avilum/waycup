@@ -22,7 +22,8 @@ It wraps your appliction with a "black hole" that swallows automatic crawlers an
 4. If the server supports routing tables manipulation, the iptables can be modified and the client can keep communicating over the same port. see ./server.sh for more information.
 
 ## Use Cases:
-1. Hide services behind open ports from security scanners (Shodan, Censys...)
+1. Hide services from security scanners(Shodan, Censys...) and hackers (port scanning shit just got real).
+2. Keep your server a secret while it listens to www facing ports. It's like a black hole.
 2. Expose a service's functionality on a port only to clients with a pre-shared secret, without modifying the application layer or managing users.
 4. Copy/Paste where you don't want to configure a proxy like nginx. Also, it's easy to fingerprint nginx. This is a copy/paste solution with almost no dependencies.
 
