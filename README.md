@@ -1,19 +1,21 @@
-# WayCup - A tool agains fingerprinting.<br>
-WayCup scripts let you expose your real server functionality only after sending a magic "Wake Up" packet to an open port.<br>
-You can use WayCup as an additional layer of security against fingerprinting for you SSH/HTTP servers (and many more).
+These scripts let you expose your real server functionality only after sending a magic "Wake Up" packet to an open port.<br>
+You can use WayCup as an <b>additional</b> layer of security against fingerprinting for your SSH/HTTP servers (and many more), or a minimal alternative to port knocking.<br>
 
 ## Use Cases:
 1. Hide services behind open ports from security scanners (Shodan, Censys...)
-2. Expose a service's fingerprint only to clients with pre-shared secret, without modifying the application layer or managing users.
+2. Expose a service's functionality on a port only to clients with a pre-shared secret, without modifying the application layer or managing users.
+
+### Less secure (but nice) use cases:
 3. Use as an API for remote calls on a machine (run a generic script)
 4. When SSH is not (or can't be) installed - pure remote bash shell.
-5. Leaving backdoors that start on demand (reverse shells)
 
-## Concept:
+## How it works:
+It wraps your appliction with a "black hole" that swallows automatic crawlers and bots, thus leaving your assets "anonymous" and making cyber attacks on your assets more complex.
+<br>
 1. The server(s) listen on any port for a magic packet via TCP/UDP. 
 2. A magic "Wake Up" packet is sent from a client.
 3. The "Wake Up" packet is received by the server.
-3. The server runs a generic script, that exposes the service (SSH, HTTP...) to the client on the same (or on a new) port. If the server supports routing tables manipulation, the iptables can be modified and the client can keep communicating over the same port. see server.sh for more information.
+3. The server runs a generic script, that exposes the service (SSH, HTTP, Anything) to the client on the same (or on a new) port. If the server supports routing tables manipulation, the iptables can be modified and the client can keep communicating over the same port. see ./server.sh for more information.
 
 # Examples
 
@@ -115,3 +117,4 @@ HMAC Validation:
 * Runs on any UNIX system that supports busybox syntax.
 * You can copy and paste it in your servers, as-is, if you have <code>nc</code> installed.
 * BSD netcat does not supports client IP extraction and iptables modification (yet), install GNU netcat for better compitability.
+
