@@ -4,10 +4,12 @@ You can use WayCup as an <b>additional</b> layer of security against fingerprint
 ## Use Cases:
 1. Hide services behind open ports from security scanners (Shodan, Censys...)
 2. Expose a service's functionality on a port only to clients with a pre-shared secret, without modifying the application layer or managing users.
+4. Copy/Paste where you don't want to configure a proxy like nginx. It's easy to fingerprint, just saying. This solution is copy/pase with almost no dependencies.
 
 ### Less secure (but nice) use cases:
-3. Use as an API for remote calls on a machine (run a generic script)
-4. When SSH is not (or can't be) installed - pure remote bash shell.
+1. Use as an API for remote calls on a machine (run a generic script)
+2. When SSH is not (or can't be) installed - pure reverse bash shell.
+3. Pentesting and Red Teams.
 
 ## How it works:
 It wraps your appliction with a "black hole" that swallows automatic crawlers and bots, thus leaving your assets "anonymous" and making cyber attacks on your assets more complex.
