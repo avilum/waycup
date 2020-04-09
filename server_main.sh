@@ -28,11 +28,21 @@
 #      ufw allow ...
 #      iptables -A ...
 #      nftables ...
+#
+# Scripts:
+#   Anything that's not implimented yet. Feel free to contribute!
+#
 
+# The ip on a new connected client, after secert "handskare", received as an argument from server.sh
+CLIENT_IP=$1
+
+# The port that the client should be redirected to if local iptables (or supported alternative) is installed.
+# If iptables isn't installed.
+REAL_SERVICE_PORT=$2
 
 # Default example: starting a reverse shell
 REVERSE_SHELL_HOST='localhost'
-REVERSE_SHELL_PORT=8080
+REVERSE_SHELL_PORT=$REAL_SERVICE_PORT
 echo "Starting a reverse shell on $REVERSE_SHELL_HOST:$REVERSE_SHELL_PORT"
 netcat -e /bin/sh $REVERSE_SHELL_HOST $REVERSE_SHELL_PORT
 

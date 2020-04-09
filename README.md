@@ -13,7 +13,7 @@ You can use WayCup as an additional layer of security against fingerprinting for
 1. The server(s) listen on any port for a magic packet via TCP/UDP. 
 2. A magic "Wake Up" packet is sent from a client.
 3. The "Wake Up" packet is received by the server.
-3. The server runs a generic script, that exposes the service (SSH, HTTP...) to the client on the same (or on a new) port.
+3. The server runs a generic script, that exposes the service (SSH, HTTP...) to the client on the same (or on a new) port. If the server supports routing tables manipulation, the iptables can be modified and the client can keep communicating over the same port. see server.sh for more information.
 
 # Examples
 
@@ -114,3 +114,4 @@ HMAC Validation:
 # Compitability:
 * Runs on any UNIX system that supports busybox syntax.
 * You can copy and paste it in your servers, as-is, if you have <code>nc</code> installed.
+* BSD netcat does not supports client IP extraction and iptables modification (yet), install GNU netcat for better compitability.
