@@ -1,5 +1,6 @@
+# WayCup
 These scripts let you expose your real server functionality only after sending a magic "Wake Up" packet to an open port.<br>
-You can use WayCup as an <b>additional</b> layer of security against fingerprinting for your SSH/HTTP servers (and many more), or a minimal alternative to port knocking.<br>
+You can use WayCup as an <b>additional</b> layer of security against fingerprinting for your SSH/HTTP servers (and many more), or a minimal alternative to port knocking.<br><br>
 Run a local example: reverse shell with magic handshake<br>
 ```bash
 
@@ -11,6 +12,15 @@ git clone git@github.com:avilum/waycup.git && cd waycup/
 
 ```
 
+## How it works:
+It wraps your appliction with a "black hole" that swallows automatic crawlers and bots, thus leaving your assets "anonymous" and making cyber attacks on your assets more complex.
+<br>
+1. The server(s) listen on any port for a magic packet via TCP/UDP. 
+2. A magic "Wake Up" packet is sent from a client.
+3. The "Wake Up" packet is received by the server.
+3. The server runs a generic script, that exposes the service (SSH, HTTP, Anything) to the client on the same (or on a new) port.
+4. If the server supports routing tables manipulation, the iptables can be modified and the client can keep communicating over the same port. see ./server.sh for more information.
+
 ## Use Cases:
 1. Hide services behind open ports from security scanners (Shodan, Censys...)
 2. Expose a service's functionality on a port only to clients with a pre-shared secret, without modifying the application layer or managing users.
@@ -20,14 +30,6 @@ git clone git@github.com:avilum/waycup.git && cd waycup/
 1. Use as an API for remote calls on a machine (run a generic script)
 2. When SSH is not (or can't be) installed - pure reverse bash shell.
 3. Pentesting and Red Teams.
-
-## How it works:
-It wraps your appliction with a "black hole" that swallows automatic crawlers and bots, thus leaving your assets "anonymous" and making cyber attacks on your assets more complex.
-<br>
-1. The server(s) listen on any port for a magic packet via TCP/UDP. 
-2. A magic "Wake Up" packet is sent from a client.
-3. The "Wake Up" packet is received by the server.
-3. The server runs a generic script, that exposes the service (SSH, HTTP, Anything) to the client on the same (or on a new) port. If the server supports routing tables manipulation, the iptables can be modified and the client can keep communicating over the same port. see ./server.sh for more information.
 
 # Examples
 
