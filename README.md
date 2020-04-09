@@ -91,7 +91,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((SERVER_HOST, SERVER_MAGIC_PORT))
     s.sendall(MAGIC.encode())
 
-# Query the API / Connect to the service on the same or different that's just opened for you
+# Query the API / Connect to the service on the same or different that just opened for you
 
 import requests
 
