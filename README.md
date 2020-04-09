@@ -77,8 +77,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.sendall(MAGIC.encode())
 
 # Query the API / Connect to the service on the same or different that's just opened for you
+
 import requests
-requests.get('http://localhost:80') # Change server.main.sh to run python3 http server on / when a client connects
+
+# Change server.main.sh to run python3 http server on the root folder when a client connects
+requests.get('http://localhost:80') 
 ```
 
 Remote reverse-shell:
@@ -101,13 +104,19 @@ root
 # Adding security
 You should add an extra layer of security if you want to prevent reply attacks. That can be done by adding a TLS layer to your server with OpenSSL/Boring SSL
 
-SSL:
+OpenSSL:
 ```bash
-# install openssl
+Not implimented yet - feel free to contribute!
+```
+
+BoringSSL:
+```bash
+Not implimented yet - feel free to contribute!
 ```
 
 HMAC Validation:
 ```bash
+Not implimented yet - feel free to contribute!
 ```
 
 # Server Dependencies:
