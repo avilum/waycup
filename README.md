@@ -64,7 +64,7 @@ ssh $MAGIC_LISTENER_HOST -p $SERVER_MAGIC_PORT
 # See server_main.sh and client.sh for more documentation.
 ```
 
-Python: Send a magic packet that starts an HTTP Server
+Python: Send a magic packet that reveals an HTTP Server
 ```text
 In [1]: import requests
 In [2]: requests.get('http://localhost:80')
