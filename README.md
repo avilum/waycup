@@ -11,6 +11,16 @@ git clone git@github.com:avilum/waycup.git && cd waycup/
 ./client.sh
 
 ```
+### Use Cases:
+1. Hide services from security scanners (Shodan, Censys, nmap, zmap) and hackers (port scanning and fingerprint fails).
+2. Keep your server a secret while it listens to www facing ports. It's like a black hole.
+2. Expose a service's functionality on a port only to clients with a pre-shared secret, without modifying the application layer or managing users.
+4. Copy/Paste where you don't want to configure a proxy like nginx. Also, it's easy to fingerprint nginx. This is a copy/paste solution with almost no dependencies.
+
+### Less secure (but nice) use cases:
+1. Use as an API for remote calls on a machine (run a generic script)
+2. When SSH is not (or can't be) installed - pure reverse bash shell.
+3. Pentesting and Red Teams.
 
 ## How it works:
 It wraps your appliction with a "black hole" that swallows automatic crawlers and bots, thus leaving your assets "anonymous" and making cyber attacks on your assets more complex.
@@ -20,17 +30,6 @@ It wraps your appliction with a "black hole" that swallows automatic crawlers an
 3. The "Wake Up" packet is received by the server.
 3. The server runs a generic script, that exposes the service (SSH, HTTP, Anything) to the client on the same (or on a new) port.
 4. If the server supports routing tables manipulation, the iptables can be modified and the client can keep communicating over the same port. see ./server.sh for more information.
-
-## Use Cases:
-1. Hide services from security scanners(Shodan, Censys...) and hackers (port scanning shit just got real).
-2. Keep your server a secret while it listens to www facing ports. It's like a black hole.
-2. Expose a service's functionality on a port only to clients with a pre-shared secret, without modifying the application layer or managing users.
-4. Copy/Paste where you don't want to configure a proxy like nginx. Also, it's easy to fingerprint nginx. This is a copy/paste solution with almost no dependencies.
-
-### Less secure (but nice) use cases:
-1. Use as an API for remote calls on a machine (run a generic script)
-2. When SSH is not (or can't be) installed - pure reverse bash shell.
-3. Pentesting and Red Teams.
 
 # Examples
 
