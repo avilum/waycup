@@ -83,6 +83,7 @@ Out[4]: <Response [200]>
 ```
 Copy and paste:
 ```python
+import socket
 MAGIC="secret"
 SERVER_HOST="localhost"
 SERVER_MAGIC_PORT=8080
@@ -94,7 +95,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
 import requests
 
-# Change server.main.sh to run python3 http server on the root folder when a client connects
+# Modify server_main.sh to run an http server (uncomment a line)
 requests.get('http://localhost:80') 
 ```
 
