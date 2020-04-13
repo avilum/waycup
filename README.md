@@ -123,6 +123,13 @@ You should add an extra layer of security if you want to prevent reply attacks. 
 OpenSSL:
 ```bash
 Not implimented yet - feel free to contribute!
+
+# Generate random secret:
+SECRET=$(openssl rand -base64 512) # Copy to server.sh and client.sh.
+
+
+# Generate a random MAC address for the server:
+sudo ifconfig [interface_name] ether $(openssl rand -hex 6 | sed 's%\(..\)%\1:%g; s%.$%%')
 ```
 
 BoringSSL:
