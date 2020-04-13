@@ -13,14 +13,14 @@ STARTUP_SCRIPT="./server_main.sh"
 #   (by running the service on a localhost port and playing with the routing).
 
 # OTHERWISE: You have 2 options
-#   1. Brak the loop (exit the nc listener) and start the service on the same port
+#   1. Break the loop (exit the nc listener) and start the service on the same port
 #   2. Start the service on a new port that listens on localhost,
 #       and route the ip of the client to that port seamlessly.
 
 while true; do
     echo "Listening for magic packets on $MAGIC_HOST:$MAGIC_PORT"
-    INPUT=$( nc -vvv -l $MAGIC_HOST -p $MAGIC_PORT)
-    if [[ "$INPUT" == $MAGIC ]]; then
+    INPUT=$( nc -c -vvv -l $MAGIC_HOST -p $MAGIC_PORT )
+    if [[ $INPUT == $MAGIC ]]; then
         echo "Successful connection from $CLIENT_IP";
 
         # Calling the startup script and passing the client's IP and the port to serve on as arguments.
@@ -54,7 +54,7 @@ while true; do
         fi
 
         # You may want to comment it to allow multiple or single clients/loops.
-        break
+        # break
     else 
         echo "Failed connection";
     fi;
