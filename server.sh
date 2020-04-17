@@ -19,7 +19,7 @@ STARTUP_SCRIPT="./server_main.sh"
 
 while true; do
     echo "Listening for magic packets on $MAGIC_HOST:$MAGIC_PORT"
-    INPUT=$( nc -c -vvv -l $MAGIC_HOST -p $MAGIC_PORT )
+    INPUT=$( nc -vvv -l -s $MAGIC_HOST -p $MAGIC_PORT -w 1 )
     if [[ $INPUT == $MAGIC ]]; then
         echo "Successful connection from $CLIENT_IP";
 
@@ -29,8 +29,8 @@ while true; do
         
         # For GNU netcat, you can fetch the client IP from the netcat log and authorize it via iptables.
         # TODO: Try to fetch it automatically from nc verbose log with sed/awk
-        CLIENT_IP="<impliment>"
-        $STARTUP_SCRIPT $CLIENT_IP $REAL_SERVICE_PORT &
+        CLIENT_IP=$MAGIC_HOST
+        $STARTUP_SCRIPT $CLIENT_IP $REAL_SERVICE_PORT 2>&1 &
 
         # If the server has any iptables or more modern alternative installed,
         # whitelisting it and redirecting the transport to the new port that listens on localhost.
@@ -55,8 +55,8 @@ while true; do
 
         # You may want to comment it to allow multiple or single clients/loops.
         # break
+
     else 
         echo "Failed connection";
     fi;
 done
-exit 0

