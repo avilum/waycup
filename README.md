@@ -149,4 +149,6 @@ Not implimented yet - feel free to contribute!
 * Runs on any UNIX system that supports busybox syntax.
 * You can copy and paste it in your servers, as-is, if you have <code>nc</code> installed.
 * BSD netcat does not supports client IP extraction and iptables modification (yet), install GNU netcat for better compitability.
+* Mac users - Remove "-w" argument in server.sh and add "-c" argument to client.sh
+
 
