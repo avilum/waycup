@@ -149,4 +149,24 @@ Not implimented yet - feel free to contribute!
 * Runs on any UNIX system that supports busybox syntax.
 * You can copy and paste it in your servers, as-is, if you have <code>nc</code> installed.
 * BSD netcat does not supports client IP extraction and iptables modification (yet), install GNU netcat for better compitability.
+* Mac users - Remove "-w" argument in server.sh and add "-c" argument to client.sh
 
+# Nc manual:
+```bash
+nc
+nc [OPTIONS] HOST PORT - connect nc [OPTIONS] -l -p PORT [HOST] [PORT] - listen
+
+Options:
+
+        -e PROG         Run PROG after connect (must be last)
+        -l              Listen mode, for inbound connects
+        -n              Don't do DNS resolution
+        -s ADDR         Local address
+        -p PORT         Local port
+        -u              UDP mode
+        -v              Verbose
+        -w SEC          Timeout for connects and final net reads
+        -i SEC          Delay interval for lines sent
+        -o FILE         Hex dump traffic
+        -z              Zero-I/O mode (scanning)
+```
