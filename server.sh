@@ -7,7 +7,7 @@ REAL_SERVICE_PORT=8081 # Your real service listening port on localhost
 STARTUP_SCRIPT="./server_main.sh"
 
 # NOTICE:
-# If your server supports iptables (or an implimented alternative in server.sh),
+# If your server supports iptables (or an Implemented alternative in server.sh),
 # After the magic packet is sent,
 # The client and server can keep communicatin over the same port
 #   (by running the service on a localhost port and playing with the routing).
@@ -44,13 +44,13 @@ while true; do
         # TODO: Test on different unix dockers
         elif type ufw 2>/dev/null; then
             echo "ufw found"
-            # TODO: Impliment
+            # TODO: Implement
         
         # TODO: Test on different unix dockers
         elif type nftables 2>/dev/null; then
             echo "nftables found"
             # iptables syntax should be compitable on debian 10+
-            # TODO: Impliment
+            # TODO: Implement
         fi
 
         # You may want to comment it to allow multiple or single clients/loops.
