@@ -8,9 +8,13 @@ Run a local example: reverse shell with magic handshake<br>
 
 git clone https://github.com/avilum/waycup.git && cd waycup/
 
-./server.sh & # Or in another terminal
+nohup ./server.sh & # Or in another terminal
+
+# To watch server logs:
+# tail -f nohup.out
 
 ./client.sh
+# Starts a reverse shell on the server, or change server_main.sh to do anything you want.
 
 ```
 ### Use Cases:
