@@ -4,7 +4,7 @@ You can use WayCup as an <b>additional</b> layer of security against fingerprint
 Run a local example: reverse shell with magic handshake<br>
 ```bash
 # apk add git
-# apt install -y git
+# apt install -y git netcat
 
 git clone https://github.com/avilum/waycup.git && cd waycup/
 
