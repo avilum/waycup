@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MAGIC="change this magic string"
-MAGIC_HOST="localhost"
+MAGIC_HOST="0.0.0.0"
 MAGIC_PORT=8080
 REAL_SERVICE_PORT=8081 # Your real service listening port on localhost
 STARTUP_SCRIPT="./server_main.sh"
