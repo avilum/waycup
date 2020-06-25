@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MAGIC="change this magic string"
-SERVER_HOST="localhost"
+SERVER_HOST="127.0.0.1"
 SERVER_MAGIC_PORT=8080
 
 echo "Sending magic packet to $SERVER_HOST:$SERVER_MAGIC_PORT"
