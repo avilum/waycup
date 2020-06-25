@@ -6,7 +6,7 @@ Run a local example: reverse shell with magic handshake<br>
 # apk add git
 # apt install -y git
 
-git clone git@github.com:avilum/waycup.git && cd waycup/
+git clone https://github.com/avilum/waycup.git && cd waycup/
 
 ./server.sh & # Or in another terminal
 
