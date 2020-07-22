@@ -1,4 +1,4 @@
-# WayCup
+# WayCup - Port Knocking out of the box
 These scripts let you expose your real server functionality only after sending a magic "Wake Up" packet to an open port.<br>
 You can use WayCup as an <b>additional</b> layer of security against fingerprinting for your SSH/HTTP servers (and many more), or a minimal alternative to port knocking.<br><br>
 Run a local example: reverse shell with magic handshake<br>
